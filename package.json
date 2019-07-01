@@ -30,6 +30,10 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-strip-debug": "^3.0.0",
     "gulp-terser": "^1.2.0",
+    "merge-stream": "^2.0.0",
     "postcss-assets": "^5.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

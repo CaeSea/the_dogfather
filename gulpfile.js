@@ -17,7 +17,8 @@ const devBuild = (process.env.NODE_ENV !== 'production'),
       deporder = require('gulp-deporder'),
       terser = require('gulp-terser'),
       stripdebug = devBuild ? null : require('gulp-strip-debug'),
-      sourcemaps = devBuild ? require('gulp-sourcemaps') : null;
+      sourcemaps = devBuild ? require('gulp-sourcemaps') : null,
+      merge = require('merge-stream');
 
 function browserSync(done) {
     server.init({
@@ -72,7 +73,7 @@ function js() {
 // CSS processing
 function css() {
 
-    return gulp.src(`${src}/scss/main.scss`)
+    const scss = gulp.src(`${src}/scss/main.scss`)
         .pipe(sourcemaps ? sourcemaps.init() : noop())
         .pipe(sass({
         outputStyle: 'nested',
@@ -80,12 +81,17 @@ function css() {
         precision: 3,
         errLogToConsole: true
         }).on('error', sass.logError))
+    
+    const reset = gulp.src('node_modules/normalize.css/normalize.css');
+
+    return merge(reset, scss)
         .pipe(postcss([
-        assets({ loadPaths: ['images/'] }),
-        mqpacker,
-        cssnano
-        ]))
+            assets({ loadPaths: ['images/'] }),
+            mqpacker,
+            cssnano
+            ]))
         .pipe(sourcemaps ? sourcemaps.write() : noop())
+        .pipe(concat('main.css'))
         .pipe(gulp.dest(`${dist}/css/`))
         .pipe(server.stream());
 }
