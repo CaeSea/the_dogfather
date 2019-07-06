@@ -1,98 +1,220 @@
 #about-me {
-    height: 100vh;
-    width: 80%;
-    margin: 0 auto;
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
 
-    .wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-top: 2em;
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 6em;
+    position: relative;
 
-        .greeting {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            // justify-content: center;
-        }
+    h2 {
+      font-family: "RalewayBold", sans-serif;
+      background-color: $charcoal;
+      color: $white;
+      font-size: 2.5em;
 
-        h2 {
-            font-family: 'RalewayBold', sans-serif;
-            color: $orange;
-            font-size: 4.5em;
-        }
-    
-        h3 {
-            font-family: 'RalewayBold', sans-serif;
-            color: $font-primary;
-            font-size: 1.375em;
-            padding: 1em 0;
-        }
-    
-        .quotes {
-            // font-family: Arial, Helvetica, sans-serif;
-            // font-size: 72px;
-            color: $font-primary;
-        }
-    
-        .bio {
-    
-            p {
-                font-family: 'RalewayMedium', sans-serif;
-                color: $font-primary;
-                font-size: 1em;
-                line-height: 1.4em;
-                margin: 1em 0;
-    
-                &:first-child {
-                    margin: 0;
-                }
-            }
-    
-            .profile-pic-wrapper {
-                float: right;
-            }
-        }
-    
-        .get-in-touch {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            margin-top: 2.5em;
-    
-            .strapline {
-                font-family: 'RalewayBold', sans-serif;
-                font-size: 4.5em;
-                color: $orange;
-            }
+      @media (min-width: $mobile-tablet) and (max-width: $tablet) {
+        font-size: 3.5em;
+      }
 
-            .button-wrapper {
-                width: 100%;
-                display: flex;
-                justify-content: center;
+      @media (min-width: $tablet) and (max-width: $desktop) {
+        font-size: 5em;
+      }
 
-                p {
-                    font-family: 'Raleway', sans-serif;
-                    color: $font-primary;
-                    font-size: 2.25em;
-                    text-align: center;
-                }
-
-                button {
-                    margin-left: 1em;
-                    background-color: $green;
-                    border: none;
-                    padding: 15px;
-                    color: $white;
-                    font-family: 'Raleway', sans-serif;
-                    font-size: 1.375em;
-                    cursor: pointer;
-
-                    &:hover {
-                        background-color: $orange;
-                    }
-                }
-            }
-        }
+      @media (min-width: $desktop) {
+        font-size: 6em;
+      }
     }
+
+    h3 {
+      font-family: "RalewayBold", sans-serif;
+      color: $orange;
+      font-size: 1em;
+      padding: 0.5em 0;
+
+      @media (min-width: $mobile-tablet) and (max-width: $mobile-tablet) {
+        font-size: 1.2em;
+      }
+
+      @media (min-width: $tablet) and (max-width: $desktop) {
+        font-size: 2em;
+      }
+
+      @media (min-width: $desktop) {
+        font-size: 2.2em;
+      }
+    }
+
+    .bio {
+      @media (min-width: $desktop) {
+        width: 100%;
+      }
+
+      @media (min-width: $tablet) {
+        border-left: 5px solid $orange;
+        padding-left: 25px;
+      }
+
+      p {
+        font-family: "RalewayMedium", sans-serif;
+        color: $font-primary;
+        font-size: 0.75em;
+        line-height: 1.3em;
+        margin: 0.5em 0;
+
+        &:first-child {
+          margin: 0;
+        }
+
+        @media (min-height: $small-height) {
+          line-height: 1.5em;
+        }
+
+        @media (min-width: $tablet) {
+          font-size: 1.1em;
+        }
+      }
+
+      .profile-pic-wrapper {
+        @media (max-width: $x-large) {
+          float: right;
+        }
+
+        @media (min-width: $x-large) and (max-width: 1520px) {
+          position: absolute;
+          right: 350px;
+        }
+
+        @media (min-width: 1520px) and (max-width: 1719px) {
+          position: absolute;
+          right: 600px;
+        }
+
+        @media (min-width: 1720px) {
+          position: absolute;
+          right: 720px;
+        }
+
+        img {
+          width: 150px;
+
+          @media (min-width: $desktop) {
+            width: 200px;
+          }
+        }
+      }
+    }
+
+    .get-in-touch {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      @media (min-width: $tablet) {
+        padding-left: 4em;
+      }
+
+      @media (min-width: $desktop) {
+        width: 80%;
+      }
+
+      @media (min-width: $x-large) {
+        margin-top: 6em;
+      }
+
+      .strapline {
+        font-family: "RalewayBold", sans-serif;
+        font-size: 2em;
+        color: $orange;
+
+        @media (min-width: $tablet) {
+          font-size: 4.5em;
+        }
+      }
+
+      .button-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0.2em;
+
+        @media (min-width: $desktop) {
+          justify-content: flex-start;
+          margin-left: 7em;
+        }
+
+        p {
+          font-family: "Raleway", sans-serif;
+          color: $font-primary;
+          font-size: 1em;
+          text-align: center;
+
+          @media (min-width: $tablet) {
+            font-size: 2.1em;
+          }
+        }
+
+        button {
+          margin-left: 1em;
+          background-color: $green;
+          border: none;
+          padding: 10px;
+          color: $white;
+          font-family: "RalewayMedium", sans-serif;
+          font-size: 0.8em;
+          cursor: pointer;
+
+          @media (min-width: $tablet) {
+            font-size: 1.5em;
+            padding: 15px;
+          }
+
+          &:hover {
+            background-color: lighten($green, 5%);
+          }
+        }
+      }
+    }
+
+    .paw-image-wrapper {
+      position: absolute;
+      width: 150px;
+      transform: rotate(-20deg);
+      right: 35px;
+      top: 300px;
+
+      @media (max-width: $x-large) {
+        display: none;
+      }
+    }
+
+    .second-paw-image-wrapper {
+      @media (max-width: $x-large) {
+        display: none;
+      }
+
+      position: absolute;
+      width: 150px;
+      transform: rotate(10deg);
+      right: 150px;
+      top: 600px;
+    }
+
+    .third-paw-image-wrapper {
+      @media (max-width: $x-large) {
+        display: none;
+      }
+
+      position: absolute;
+      width: 150px;
+      transform: rotate(20deg);
+      right: 375px;
+      top: 80px;
+    }
+  }
 }

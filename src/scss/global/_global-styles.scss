@@ -16,6 +16,20 @@ p {
     margin: 0;
 }
 
-.line-break {
-    width: 100%;
-  }
+.hide-small-height {
+    @media (max-height: $small-height) {
+        display: none;
+    }
+}
+
+.hide-mob {
+    @media (max-width: 321px) {
+        display: none;
+    }
+}
+
+.hide-until-tablet {
+    @media (max-width: $tablet) {
+        display: none;
+    }
+}
