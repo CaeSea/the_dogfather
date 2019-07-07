@@ -2,10 +2,13 @@
   position: relative;
   font-family: "theboldfont", sans-serif;
   overflow: hidden;
-  min-height: 100vh;
-  max-height: 100vh;
   display: flex;
   flex-wrap: wrap;
+
+  @media screen and (orientation: portrait) {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  }
 
   .wrapper {
     display: flex;
@@ -23,7 +26,7 @@
     width: 100%;
     text-align: center;
 
-    @media (min-width: $large) {
+    @media screen and (min-width: $large) {
       text-align: left;
     }
 
@@ -35,12 +38,17 @@
       margin-top: 3px;
       margin-right: 15px;
 
-      @media (min-width: $large) {
+      @media screen and (min-width: 340px) {
+        font-size: 1em;
+        margin-top: 15px;
+      }
+
+      @media screen and (min-width: $large) {
         margin-left: 4em;
         font-size: 3em;
       }
 
-      @media (min-width: $tablet) {
+      @media screen and (min-width: $tablet) {
         font-size: 2em;
       }
 
@@ -51,7 +59,7 @@
         border-right: solid 3px $orange;
 
         &:first-child {
-          @media (min-width: 321px) {
+          @media screen and (min-width: 321px) {
             padding-left: 0;
           }
         }
@@ -64,7 +72,7 @@
           color: lighten($orange, 5%);
         }
 
-        @media (min-width: $large) {
+        @media screen and (min-width: $large) {
           padding: 5px 30px;
         }
       }
@@ -74,11 +82,11 @@
   .landing-page-logo {
     width: 250px;
 
-    @media (min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
       width: 450px;
     }
 
-    @media (min-width: $tablet) {
+    @media screen and (min-width: $tablet) {
       width: 400px;
     }
   }
@@ -97,27 +105,27 @@
     background-color: $charcoal;
     color: $white;
 
-    @media (min-width: $x-large) {
+    @media screen and (min-width: $x-large) {
       top: 65px;
       left: -30px;
     }
 
-    @media (min-width: $large) and (max-width: $x-large) {
+    @media screen and (min-width: $large) and (max-width: $x-large) {
       top: 80px;
     }
 
-    @media (min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
       height: 285px;
     }
 
-    @media (min-width: $tablet) {
+    @media screen and (min-width: $tablet) {
       justify-content: flex-start;
       left: -25px;
       height: 220px;
       width: 110%;
     }
 
-    @media (min-width: $tablet) and (max-width: $large) {
+    @media screen and (min-width: $tablet) and (max-width: $large) {
       top: 100px;
     }
 
@@ -129,7 +137,7 @@
       width: 92%;
       text-align: center;
 
-      @media (min-width: $desktop) {
+      @media screen and (min-width: $desktop) {
         justify-content: flex-start;
       }
 
@@ -138,17 +146,17 @@
         font-size: 2em;
         color: $white;
 
-        @media (min-width: $tablet) {
+        @media screen and (min-width: $tablet) {
           font-size: 3em;
           margin-bottom: 0;
         }
 
-        @media (min-width: $desktop) {
+        @media screen and (min-width: $desktop) {
           font-size: 3.5em;
           margin-left: 2em;
         }
 
-        @media (min-width: $x-large) {
+        @media screen and (min-width: $x-large) {
           font-size: 4em;
         }
       }
@@ -161,15 +169,15 @@
       left: 975px;
       bottom: 30px;
 
-      @media (min-width: 1160px) and (max-width: 1300px) {
+      @media screen and (min-width: 1160px) and (max-width: 1300px) {
         left: 1025px;
       }
 
-      @media (min-width: $x-large) {
+      @media screen and (min-width: $x-large) {
         left: 1175px;
       }
 
-      @media (max-width: $large) {
+      @media screen and (max-width: $large) {
         display: none;
       }
     }
@@ -197,7 +205,7 @@
     bottom: 5px;
     cursor: pointer;
 
-    @media (min-width: $tablet) {
+    @media screen and (min-width: $tablet) {
       width: 75px;
       height: 75px;
     }
