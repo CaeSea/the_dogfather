@@ -36,3 +36,22 @@ span {
     display: none;
   }
 }
+
+.page-title {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+
+  h1 {
+    font-family: "Raleway", sans-serif;
+    padding: 5px 20px;
+
+    @media (min-width: $desktop) {
+      margin-left: 5px;
+    }
+
+    @media (min-width: $mobile-tablet) {
+      font-size: 2.5em;
+    }
+  }
+}

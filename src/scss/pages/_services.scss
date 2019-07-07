@@ -3,24 +3,16 @@
   width: 100%;
   margin: 0 auto;
   padding: 1px 0;
+  border-top: 3px solid $orange;
 
   .wrapper {
     width: 100%;
 
     .page-title {
-      display: flex;
-      justify-content: flex-start;
-      margin-bottom: 15px;
+      background-color: lighten($charcoal, 5%);
 
       h1 {
-        font-family: "Raleway", sans-serif;
         color: $orange;
-        background-color: lighten($charcoal, 5%);
-        padding: 5px 20px;
-
-        @media (min-width: $mobile-tablet) {
-          font-size: 2.5em;
-        }
       }
     }
   }
@@ -31,10 +23,6 @@
     display: flex;
     width: 98%;
     margin: 5px auto;
-
-    // @media screen and (max-height: 639px) {
-    //   height: 182px;
-    // }
 
     @media screen and (min-width: $desktop) {
       max-width: 1200px;
