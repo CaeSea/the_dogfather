@@ -1,35 +1,38 @@
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 
-    &:visited {
-        color: $orange;
-    }
+  &:visited {
+    color: $orange;
+  }
 }
 
 h1,
 h2,
 h3,
 h4,
-p {
-    padding: 0;
-    margin: 0;
+p,
+li,
+span {
+  padding: 0;
+  margin: 0;
+  color: $font-primary;
 }
 
 .hide-small-height {
-    @media (max-height: $small-height) {
-        display: none;
-    }
+  @media (max-height: $small-height) {
+    display: none;
+  }
 }
 
 .hide-mob {
-    @media (max-width: 321px) {
-        display: none;
-    }
+  @media (max-width: 321px) {
+    display: none;
+  }
 }
 
 .hide-until-tablet {
-    @media (max-width: $tablet) {
-        display: none;
-    }
+  @media (max-width: $tablet) {
+    display: none;
+  }
 }

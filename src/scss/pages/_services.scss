@@ -1,0 +1,174 @@
+#services {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: $charcoal;
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .dog-walking,
+  .pet-sitting,
+  .overnight {
+    display: flex;
+    width: 98%;
+    margin: 3px auto;
+    height: 32.66%;
+
+    @media (max-height: 639px) {
+      height: 182px;
+    }
+
+    @media (min-width: $desktop) {
+      max-width: 1200px;
+      height: 29%;
+      margin: 30px auto;
+    }
+  }
+
+  .dog-walking {
+    background-image: url(../../images/services-1.jpg);
+    background-position: 30% 20%;
+
+    @media (max-width: 460px) {
+      background-position: 32% 28%;
+    }
+
+    @media (min-width: $tablet) {
+      justify-content: flex-end;
+    }
+
+    @media (min-width: $desktop) {
+      .services-info {
+        margin: 20px 2%;
+      }
+    }
+  }
+
+  .pet-sitting {
+    background-image: url(../../images/services-2.jpg);
+    background-position: 35% 35%;
+
+    @media (max-width: 460px) {
+      background-position: 50% 35%;
+    }
+
+    @media (min-width: 461px) {
+      background-position: 45% 35%;
+    }
+
+    @media (min-width: $desktop) {
+      .services-info {
+        margin: 20px 2%;
+      }
+    }
+  }
+
+  .overnight {
+    background-image: url(../../images/services-3.jpg);
+    background-position: 45% 35%;
+
+    @media (max-width: 460px) {
+      background-position: 52.5% 35%;
+    }
+
+    @media (min-width: 461px) {
+      justify-content: flex-end;
+      background-position: 60% 35%;
+    }
+
+    @media (min-width: $desktop) {
+      .services-info {
+        margin: 20px 2%;
+      }
+    }
+  }
+
+  .services-info {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba($charcoal, 0.7);
+    justify-content: center;
+    padding: 2px;
+    width: 100%;
+
+    @media (max-width: $desktop) {
+      width: 100%;
+      margin: 5px;
+    }
+
+    h2 {
+      font-family: "Raleway", sans-serif;
+      margin-bottom: 0.1em;
+      color: $orange;
+
+      @media (max-width: 400px) {
+        margin-top: 0.3em;
+        font-size: 1.2em;
+      }
+
+      @media (min-width: 401px) and (max-width: $desktop) {
+        font-size: 2em;
+        margin-top: 0.5em;
+      }
+
+      @media (min-width: $desktop) {
+        font-size: 2.25em;
+      }
+    }
+
+    ul {
+      font-family: "Raleway", sans-serif;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+      flex: 1 0 auto;
+
+      li {
+        padding: 5px 0;
+        font-size: 1em;
+        color: $white;
+
+        @media (max-width: 400px) {
+          font-size: 0.9em;
+          padding: 2px 0;
+        }
+
+        @media (min-width: $tablet) {
+          font-size: 1.2em;
+        }
+
+        .price {
+          color: $orange;
+          font-family: "Raleway Bold", sans-serif;
+        }
+      }
+    }
+
+    .services-contact-button {
+      font-family: "Raleway Bold", sans-serif;
+      display: flex;
+      align-self: center;
+      background-color: $green;
+      padding: 8px;
+      color: $white;
+      font-size: 0.9em;
+
+      @media (max-width: 400px) {
+        padding: 7px;
+      }
+
+      @media (min-width: 401px) {
+        padding: 15px;
+      }
+
+      &:hover {
+        background-color: lighten($green, 5%);
+      }
+    }
+  }
+}

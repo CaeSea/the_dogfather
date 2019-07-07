@@ -1,33 +1,33 @@
 /* The Bold Font */
 @font-face {
-    font-family: "TheBoldFont";
-    src: url("../assets/fonts/theboldfont.woff2") format('woff2'),
-         url("../assets/fonts/theboldfont.woff") format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "TheBoldFont";
+  src: url("../assets/fonts/theboldfont.woff2") format("woff2"),
+    url("../assets/fonts/theboldfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Raleway Regular, Medium, Bold*/
 @font-face {
-    font-family: "Raleway";
-    src: url("../assets/fonts/raleway-v13-latin-regular.woff2") format('woff2'),
-         url("../assets/fonts/raleway-v13-latin-regular.woff") format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Raleway";
+  src: url("../assets/fonts/raleway-v13-latin-regular.woff2") format("woff2"),
+    url("../assets/fonts/raleway-v13-latin-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "RalewayMedium";
-    src: url("../assets/fonts/raleway-v13-latin-600.woff2") format('woff2'),
-         url("../assets/fonts/raleway-v13-latin-600.woff") format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Raleway Bold";
+  src: url("../assets/fonts/raleway-v13-latin-600.woff2") format("woff2"),
+    url("../assets/fonts/raleway-v13-latin-600.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "RalewayBold";
-    src: url("../assets/fonts/raleway-v13-latin-500.woff2") format('woff2'),
-         url("../assets/fonts/raleway-v13-latin-500.woff") format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Raleway Medium";
+  src: url("../assets/fonts/raleway-v13-latin-500.woff2") format("woff2"),
+    url("../assets/fonts/raleway-v13-latin-500.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }

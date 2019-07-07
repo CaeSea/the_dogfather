@@ -9,11 +9,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 6em;
     position: relative;
 
     h2 {
-      font-family: "RalewayBold", sans-serif;
+      font-family: "Raleway Medium", sans-serif;
       background-color: $charcoal;
       color: $white;
       font-size: 2.5em;
@@ -32,7 +31,7 @@
     }
 
     h3 {
-      font-family: "RalewayBold", sans-serif;
+      font-family: "Raleway", sans-serif;
       color: $orange;
       font-size: 1em;
       padding: 0.5em 0;
@@ -61,7 +60,7 @@
       }
 
       p {
-        font-family: "RalewayMedium", sans-serif;
+        font-family: "Raleway Medium", sans-serif;
         color: $font-primary;
         font-size: 0.75em;
         line-height: 1.3em;
@@ -128,7 +127,7 @@
       }
 
       .strapline {
-        font-family: "RalewayBold", sans-serif;
+        font-family: "Raleway", sans-serif;
         font-size: 2em;
         color: $orange;
 
@@ -165,7 +164,7 @@
           border: none;
           padding: 10px;
           color: $white;
-          font-family: "RalewayMedium", sans-serif;
+          font-family: "Raleway Medium", sans-serif;
           font-size: 0.8em;
           cursor: pointer;
 

@@ -6,7 +6,6 @@
   max-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  background-color: $off-white;
 
   .wrapper {
     display: flex;
@@ -137,6 +136,7 @@
       .landing-strip-title {
         font-family: "TheBoldFont", sans-serif;
         font-size: 2em;
+        color: $white;
 
         @media (min-width: $tablet) {
           font-size: 3em;

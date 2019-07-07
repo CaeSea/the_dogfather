@@ -1,15 +1,13 @@
-// Color Vars
+//// SETTINGS
 @import "colors/colors";
 
-// Global
 @import "global/breakpoints";
 @import "global/global-styles";
 
-// Fonts
+//// ASSETS
 @import "fonts/fonts";
 
-// Landing Page
-@import "pages/landing-page/landing-page";
-
-// About-Me
-@import "pages/about-me/about-me.scss";
+//// PAGES
+@import "pages/landing-page";
+@import "pages/about-me.scss";
+@import "pages/services.scss";
