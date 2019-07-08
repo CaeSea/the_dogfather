@@ -1,0 +1,12 @@
+#contact {
+  height: 100vh;
+  background-color: $charcoal;
+
+  .page-title {
+    background-color: lighten($charcoal, 5%);
+
+    h1 {
+      color: $orange;
+    }
+  }
+}

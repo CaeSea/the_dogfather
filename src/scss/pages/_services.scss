@@ -1,12 +1,11 @@
 #services {
   background-color: $charcoal;
-  width: 100%;
-  margin: 0 auto;
   padding: 1px 0;
   border-top: 3px solid $orange;
 
   .wrapper {
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
 
     .page-title {
       background-color: lighten($charcoal, 5%);

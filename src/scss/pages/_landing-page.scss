@@ -19,6 +19,15 @@
   header {
     margin-right: auto;
     padding: 10px;
+
+    img {
+      transform: rotate(-7deg);
+      margin-top: 20px;
+
+      @media screen and (min-width: 1800px) {
+        margin-top: 40px;
+      }
+    }
   }
 
   nav {

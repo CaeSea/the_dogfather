@@ -1,5 +1,5 @@
 #gallery {
-  margin-bottom: 50px;
+  border-bottom: 3px solid $orange;
 
   .page-title {
     display: flex;
@@ -40,10 +40,6 @@
         @media (max-width: 660px) {
           width: 50%;
         }
-
-        // @media (max-width: 854px) {
-        //   display: none;
-        // }
       }
 
       #gal2 {
@@ -56,10 +52,6 @@
         @media (min-width: 661px) and (max-width: 854px) {
           width: 49%;
         }
-
-        // @media (max-width: 660px) {
-        //   display: none;
-        // }
       }
 
       #gal3 {
@@ -84,7 +76,6 @@
       margin: 0 auto;
       margin-top: 4px;
       overflow: hidden;
-      border: 2px solid $charcoal;
 
       @media (min-width: 661px) and (max-width: 854px) {
         margin-top: 15px;
