@@ -43,6 +43,8 @@
     }
 
     @media screen and (min-width: $desktop) {
+      margin-top: 0;
+
       .services-info {
         margin: 20px 2%;
       }
@@ -172,7 +174,7 @@
       }
 
       &:hover {
-        background-color: lighten($green, 5%);
+        background-color: lighten($green, 10%);
       }
     }
   }

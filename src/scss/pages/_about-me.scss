@@ -70,7 +70,7 @@
         margin: 0.5em 0;
 
         @media screen and (min-width: 340px) and (max-width: $tablet) {
-          font-size: 0.84em;
+          font-size: 1em;
         }
 
         &:first-child {
@@ -194,7 +194,7 @@
           }
 
           &:hover {
-            background-color: lighten($green, 5%);
+            background-color: lighten($green, 10%);
           }
         }
       }

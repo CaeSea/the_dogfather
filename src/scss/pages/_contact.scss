@@ -1,12 +1,169 @@
 #contact {
-  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   background-color: $charcoal;
 
-  .page-title {
-    background-color: lighten($charcoal, 5%);
+  .wrapper {
+    width: 95%;
+    margin: 0 auto;
 
-    h1 {
-      color: $orange;
+    .page-title {
+      background-color: lighten($charcoal, 5%);
+
+      h1 {
+        color: $orange;
+      }
+    }
+
+    .phone {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      p,
+      small {
+        text-align: center;
+        color: $white;
+        width: 100%;
+        font-size: 1.5em;
+        padding: 10px;
+
+        a {
+          color: $orange;
+          text-decoration: underline;
+        }
+      }
+
+      small {
+        font-size: 1em;
+      }
+    }
+
+    .form-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: 2em;
+
+      small {
+        color: $white;
+        opacity: 0.8;
+        margin-left: 2%;
+      }
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: $orange;
+        margin-bottom: 2em;
+
+        input,
+        textarea {
+          border: none;
+          background-color: inherit;
+          border-bottom: 2px solid $orange;
+          color: $white;
+
+          &::placeholder {
+            font-family: "Raleway Medium", sans-serif;
+            color: $white;
+            opacity: 0.8;
+
+            @media screen and (max-width: $tablet) {
+              font-size: 0.9em;
+            }
+          }
+
+          &:focus::placeholder {
+            opacity: 0;
+          }
+        }
+        input {
+          width: 42%;
+          margin: 2%;
+          padding: 2%;
+
+          @media screen and (max-width: $tablet) {
+            width: 96%;
+            margin-top: 1em;
+          }
+        }
+        textarea {
+          width: 92%;
+          margin: 2%;
+          padding: 2%;
+          margin-top: 50px;
+        }
+
+        button {
+          background-color: $green;
+          border: none;
+          padding: 15px 30px;
+          color: white;
+          margin-top: 30px;
+
+          &:hover {
+            background-color: lighten($green, 10%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-self: flex-end;
+    justify-content: flex-start;
+    padding: 2em;
+    color: $white;
+
+    @media screen and (max-width: $tablet) {
+      justify-content: center;
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding: 1em;
+    }
+
+    span {
+      font-size: 0.9em;
+      color: $white;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 0.75em;
+      }
+    }
+
+    nav {
+      font-size: 0.9em;
+      margin-left: 2em;
+
+      @media screen and (max-width: $tablet) {
+        margin-left: 0;
+        margin-top: 1em;
+      }
+
+      ul {
+        display: inline;
+        text-align: center;
+        padding: 0;
+
+        @media screen and (max-width: $tablet) {
+          font-size: 1em;
+        }
+
+        li {
+          list-style-type: none;
+          display: inline;
+          color: $white;
+
+          a {
+            color: $white;
+          }
+        }
+      }
     }
   }
 }
