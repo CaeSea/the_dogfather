@@ -3,27 +3,34 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-
-        <title>The Dogfather | Dog Walking</title>
-
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <meta name="description" content="Dog walking and pet services in Swansea">
         <meta name="author" content="Webbed Software">
 
-        <link rel="preload" href="assets/fonts/raleway-v13-latin-regular.woff" as="font">
-        <link rel="preload" href="assets/fonts/raleway-v13-latin-regular.woff2" as="font">
-        <link rel="preload" href="assets/fonts/raleway-v13-latin-500.woff" as="font">
-        <link rel="preload" href="assets/fonts/raleway-v13-latin-500.woff2" as="font">
-        <link rel="preload" href="assets/fonts/raleway-v13-latin-600.woff" as="font">
-        <link rel="preload" href="assets/fonts/raleway-v13-latin-600.woff2" as="font">
-        <link rel="preload" href="assets/fonts/theboldfont.woff" as="font">
-        <link rel="preload" href="assets/fonts/theboldfont.woff2" as="font">
+        <title>The Dogfather | Dog Walking</title>
+
+        <link rel="preconnect" href="https://ajax.googleapis.com">
+
+        <link rel="preload" href="assets/fonts/raleway-v13-latin-regular.woff" as="font" crossorigin>
+        <link rel="preload" href="assets/fonts/raleway-v13-latin-regular.woff2" as="font" crossorigin>
+        <link rel="preload" href="assets/fonts/raleway-v13-latin-500.woff" as="font" crossorigin>
+        <link rel="preload" href="assets/fonts/raleway-v13-latin-500.woff2" as="font" crossorigin>
+        <link rel="preload" href="assets/fonts/raleway-v13-latin-600.woff" as="font" crossorigin>
+        <link rel="preload" href="assets/fonts/raleway-v13-latin-600.woff2" as="font" crossorigin>
+        <link rel="preload" href="assets/fonts/theboldfont.woff" as="font" crossorigin>
+        <link rel="preload" href="assets/fonts/theboldfont.woff2" as="font" crossorigin>
 
         <link rel="preload" href="css/main.css" as="style">
-        <link rel="preload" href="js/main.js" as="script"></script>
+        <link rel="preload" href="js/main.min.js" as="script"></script>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script defer src="js/main.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon-192x192.png">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <!-- NOTE: alt tags on this page are empty for A11y purposes. Images here do not bring any context and are for decorative purposes. -->
     </head>
 
     <body>
@@ -40,16 +47,16 @@
                         <nav>
                             <ul>
                                 <li><a href="#about-me">About Me</a></li>
+                                <li>|</li>
                                 <li><a href="#services">Services</a></li>
+                                <li>|</li>
                                 <li><a href="#gallery">Gallery</a></li>
+                                <li>|</li>
                                 <li><a href="#contact">Contact</a></li>
                                 <li><img src="images/paw.svg" alt=""/></li>
                             </ul>
                         </nav>
                     </div>
-                    <a class="down-arrow" href="#about-me"> 
-                        <svg aria-hidden="true" data-prefix="fas" data-icon="angle-double-down" class="svg-inline--fa fa-angle-double-down fa-w-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="white" d="M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z"/></svg>
-                    </a>
                 </div>
                 <div class="background-image-holder"></div>
             </section>
@@ -86,9 +93,12 @@
                         <p class="strapline">Get in Touch</p>
                         <aside class="button-wrapper">
                             <p>for a free quote</p>
-                            <button>Click Me</button>
+                            <button class="button">Contact Me</button>
                         </aside>
-                    </div> 
+                    </div>
+                    <a class="back-to-top" href="#landing-section" tabindex="-1">
+                        <img src="images/chevron-up-solid.svg" alt="Back to top">
+                    </a> 
                 </div>
             </section>
             <section id="services">
@@ -105,7 +115,7 @@
                                 <li><span class="price">£2</span> per session for each additional dog</li>
                                 <li>Discounts are available for regular customers.</li>
                             </ul>
-                            <a class="services-contact-button" href="#contact">
+                            <a class="services-contact-button button" href="#contact">
                                 Get in Touch
                             </a>
                         </div>
@@ -119,7 +129,7 @@
                                 <li><span class="price">£1</span> for each additional cat.</li>
                                 <li><span class="price">50p</span> for each additional small animal.</li>
                             </ul>
-                            <a class="services-contact-button" href="#contact">
+                            <a class="services-contact-button button" href="#contact">
                                 Get in Touch
                             </a>
                         </div>
@@ -133,7 +143,7 @@
                                 <br>
                                 <br>
                             </ul>
-                            <a class="services-contact-button" href="#contact">
+                            <a class="services-contact-button button" href="#contact">
                                 Get in Touch
                             </a>
                         </div>
@@ -154,12 +164,12 @@
                     </aside>
                     <article class="gallery-slider" id="slider">
                         <figure>
-                            <img src="images/slider-image-1.png" alt="">
-                            <img src="images/slider-image-2.png" alt="">
-                            <img src="images/slider-image-3.png" alt="">
-                            <img src="images/slider-image-4.png" alt="">
-                            <img src="images/slider-image-5.png" alt="">
-                            <img src="images/slider-image-1.png" alt="">
+                            <img src="images/slider-image-1.jpg" alt="">
+                            <img src="images/slider-image-2.jpg" alt="">
+                            <img src="images/slider-image-3.jpg" alt="">
+                            <img src="images/slider-image-4.jpg" alt="">
+                            <img src="images/slider-image-5.jpg" alt="">
+                            <img src="images/slider-image-1.jpg" alt="">
                         </figure>
                     </article>
                     <aside class="collage">
@@ -187,7 +197,7 @@
                             <input id="tel" type="text" name="tel" placeholder="Contact number *">
                             <input id="service" type="text" name="service" placeholder="Service interested in">
                             <textarea name="message" id="message" cols="5" rows="5" placeholder="Your message *"></textarea>
-                            <button id="submit" type="submit">Send</button>
+                            <button class="button" id="submit" type="submit">Send</button>
                         </form>
                     </article>
                 </div>
@@ -205,7 +215,6 @@
                 </footer>
             </section>
         </main>
-        <script src="js/main.js" defer></script>
     </body>
 </html>
 
