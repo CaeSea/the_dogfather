@@ -32,6 +32,10 @@
         a {
           color: $orange;
           text-decoration: underline;
+
+          &:hover {
+            color: lighten($orange, 10%);
+          }
         }
       }
 
@@ -63,6 +67,10 @@
           background-color: inherit;
           border-bottom: 2px solid $orange;
           color: $white;
+
+          &:hover {
+            background-color: lighten($charcoal, 5%);
+          }
 
           &::placeholder {
             font-family: "Raleway Medium", sans-serif;
@@ -96,16 +104,8 @@
         }
 
         button {
-          background-color: $green;
-          border: none;
-          padding: 15px 30px;
-          color: white;
           margin-top: 30px;
-
-          &:hover {
-            background-color: lighten($green, 10%);
-            cursor: pointer;
-          }
+          padding: 12px 20px;
         }
       }
     }
@@ -161,6 +161,10 @@
 
           a {
             color: $white;
+
+            &:hover {
+              color: $orange;
+            }
           }
         }
       }

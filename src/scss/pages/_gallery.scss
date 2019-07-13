@@ -40,6 +40,10 @@
         @media (max-width: 660px) {
           width: 50%;
         }
+
+        @media (min-width: 661px) and (max-width: 854px) {
+          width: 49%;
+        }
       }
 
       #gal2 {
@@ -65,7 +69,7 @@
           width: 49%;
         }
 
-        @media (max-width: 660px) {
+        @media (max-width: 854px) {
           display: none;
         }
       }

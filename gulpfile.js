@@ -39,6 +39,15 @@ function clean() {
   return del(["./dist/**/*"]);
 }
 
+function favicon() {
+  const out = `${dist}/`;
+
+  return gulp
+    .src(`${src}/*.png`)
+    .pipe(imagemin({ optimizationLevel: 5 }))
+    .pipe(gulp.dest(out));
+}
+
 // image processing
 function images() {
   const out = `${dist}/images/`;
@@ -65,7 +74,7 @@ function js() {
     .src(`${src}/js/**/*`)
     .pipe(sourcemaps ? sourcemaps.init() : noop())
     .pipe(deporder())
-    .pipe(concat("main.js"))
+    .pipe(concat("main.min.js"))
     .pipe(stripdebug ? stripdebug() : noop())
     .pipe(terser())
     .pipe(sourcemaps ? sourcemaps.write() : noop())
@@ -117,11 +126,13 @@ function watch(done) {
 
 exports.html = gulp.series(images, html);
 exports.css = gulp.series(images, css);
+exports.favicon = favicon;
 exports.js = js;
 exports.fonts = fonts;
 exports.clean = clean;
 exports.build = gulp.parallel(
   exports.clean,
+  exports.favicon,
   exports.fonts,
   exports.html,
   exports.css,
