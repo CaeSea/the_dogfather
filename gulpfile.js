@@ -66,7 +66,8 @@ function html() {
     .src(`${src}/**/*.html`)
     .pipe(newer(out))
     .pipe(devBuild ? noop() : htmlclean())
-    .pipe(gulp.dest(out));
+    .pipe(gulp.dest(out))
+    .pipe(server.stream());
 }
 
 function js() {
@@ -79,6 +80,16 @@ function js() {
     .pipe(terser())
     .pipe(sourcemaps ? sourcemaps.write() : noop())
     .pipe(gulp.dest(`${dist}/js/`))
+    .pipe(server.stream());
+}
+
+function sw() {
+  const out = `${dist}/`;
+  return gulp
+    .src(`${src}/sw.js`)
+    .pipe(newer(out))
+    .pipe(terser())
+    .pipe(gulp.dest(out))
     .pipe(server.stream());
 }
 
@@ -120,6 +131,8 @@ function watch(done) {
   gulp.watch(`${src}/scss/**/*`, gulp.series(css));
   // js changes
   gulp.watch(`${src}/js/**/*`, gulp.series(js));
+  //sw changes
+  gulp.watch(`${src}/sw.js`, gulp.series(sw));
 
   done();
 }
@@ -128,6 +141,7 @@ exports.html = gulp.series(images, html);
 exports.css = gulp.series(images, css);
 exports.favicon = favicon;
 exports.js = js;
+exports.sw = sw;
 exports.fonts = fonts;
 exports.clean = clean;
 exports.build = gulp.parallel(
@@ -136,7 +150,8 @@ exports.build = gulp.parallel(
   exports.fonts,
   exports.html,
   exports.css,
-  exports.js
+  exports.js,
+  exports.sw
 );
 exports.watch = gulp.parallel(watch, browserSync);
 exports.default = gulp.series(exports.build, exports.watch);
