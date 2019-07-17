@@ -62,13 +62,11 @@ function images() {
 function html() {
   const out = `${dist}/`;
 
-  return (
-    gulp
-      .src(`${src}/**/*.html`)
-      //.pipe(newer(out))
-      //.pipe(devBuild ? noop() : htmlclean())
-      .pipe(gulp.dest(out))
-  );
+  return gulp
+    .src(`${src}/**/*.html`)
+    .pipe(newer(out))
+    .pipe(devBuild ? noop() : htmlclean())
+    .pipe(gulp.dest(out));
 }
 
 function js() {

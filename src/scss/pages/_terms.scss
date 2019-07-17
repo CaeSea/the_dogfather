@@ -1,0 +1,38 @@
+#terms,
+#privacy {
+  background-color: $charcoal;
+  width: 100%;
+  padding-bottom: 2em;
+
+  .wrapper {
+    width: 95%;
+    margin: 0 auto;
+
+    .page-title {
+      background-color: lighten($charcoal, 5%);
+      h1 {
+        color: $orange;
+
+        @media screen and (max-width: 400px) {
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    p {
+      font-family: "Raleway", sans-serif;
+      font-size: 0.8em;
+      color: $white;
+    }
+
+    a {
+      color: $orange;
+    }
+
+    ul {
+      li {
+        color: $white;
+      }
+    }
+  }
+}
