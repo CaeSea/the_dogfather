@@ -30,6 +30,14 @@
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon-192x192.png">
         <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
         <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+              $.cookieBar();
+              $('.cookie-message').on('cookieBar-close', function() { $('.ui-widget').fadeOut(500); });
+            });
+        </script>
+
         <!-- NOTE: alt tags on this page are empty for A11y purposes. Images here do not bring any context and are for decorative purposes. -->
     </head>
 
