@@ -1,0 +1,42 @@
+.ui-widget {
+  background: $charcoal;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  opacity: 0.8;
+  transition: all 0.25s ease-in-out;
+
+  .cookie-message {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+
+    p {
+      color: $white;
+      padding: 10px;
+
+      .cookie-link {
+        color: $orange;
+      }
+    }
+
+    a:not(.cookie-link) {
+      display: flex;
+      align-self: center;
+      background-color: $green;
+      font-family: "Raleway Medium", sans-serif;
+      font-size: 0.9em;
+      cursor: pointer;
+      padding: 8px;
+      border: none;
+      color: $white;
+
+      &:hover {
+        background-color: lighten($green, 10%);
+      }
+    }
+  }
+}
