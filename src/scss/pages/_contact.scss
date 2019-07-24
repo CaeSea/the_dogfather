@@ -49,6 +49,13 @@
       margin: 0 auto;
       margin-top: 2em;
 
+      .error-message {
+        color: $red;
+        font-family: "Raleway";
+        width: 100%;
+        text-align: center;
+      }
+
       small {
         color: $white;
         opacity: 0.8;
@@ -85,6 +92,11 @@
           &:focus::placeholder {
             opacity: 0;
           }
+
+          &.invalid {
+            outline: 2px solid $red;
+            border: none;
+          }
         }
         input {
           width: 42%;
@@ -106,6 +118,15 @@
         button {
           margin-top: 30px;
           padding: 12px 20px;
+
+          &:disabled {
+            background: #ccc;
+
+            &:hover {
+              background: #ccc;
+              cursor: default;
+            }
+          }
         }
       }
     }
