@@ -32,6 +32,24 @@
         <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 
         <script type="text/javascript">
+
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", function() {
+                    navigator.serviceWorker.register("/sw.js").then(
+                    function(registration) {
+                        // Registration was successful
+                        console.log(
+                        "ServiceWorker registration successful"
+                        );
+                    },
+                    function(err) {
+                        // registration failed :(
+                        console.log("ServiceWorker registration failed: ", err);
+                    }
+                    );
+                });
+            }
+
             $(document).ready(function() {
               $('.cookie-message').cookieBar({ closeButton : '.my-close-button', hideOnClose: false });
               $('.cookie-message').on('cookieBar-close', function() { $('.ui-widget').slideUp(); });
