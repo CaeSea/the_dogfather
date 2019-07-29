@@ -18,7 +18,8 @@ const devBuild = process.env.NODE_ENV !== "production",
   terser = require("gulp-terser"),
   stripdebug = devBuild ? null : require("gulp-strip-debug"),
   sourcemaps = devBuild ? require("gulp-sourcemaps") : null,
-  merge = require("merge-stream");
+  merge = require("merge-stream"),
+  autoprefixer = require("gulp-autoprefixer");
 
 function browserSync(done) {
   server.init({
@@ -109,7 +110,14 @@ function css() {
   const reset = gulp.src("node_modules/normalize.css/normalize.css");
 
   return merge(reset, scss)
-    .pipe(postcss([assets({ loadPaths: ["images/"] }), mqpacker, cssnano]))
+    .pipe(
+      postcss([
+        assets({ loadPaths: ["images/"] }),
+        autoprefixer,
+        mqpacker,
+        cssnano
+      ])
+    )
     .pipe(sourcemaps ? sourcemaps.write() : noop())
     .pipe(concat("main.css"))
     .pipe(gulp.dest(`${dist}/css/`))

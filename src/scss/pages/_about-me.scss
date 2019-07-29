@@ -87,23 +87,10 @@
       }
 
       .profile-pic-wrapper {
-        @media screen and (max-width: $x-large) {
-          float: right;
-        }
+        float: right;
 
-        @media screen and (min-width: $x-large) and (max-width: 1520px) {
-          position: absolute;
-          right: 350px;
-        }
-
-        @media screen and (min-width: 1520px) and (max-width: 1719px) {
-          position: absolute;
-          right: 600px;
-        }
-
-        @media screen and (min-width: 1720px) {
-          position: absolute;
-          right: 720px;
+        @media screen and (min-width: 1750px) {
+          margin-right: 80px;
         }
 
         img {
@@ -189,8 +176,12 @@
       position: absolute;
       width: 150px;
       transform: rotate(-20deg);
-      right: 35px;
-      top: 300px;
+      right: 380px;
+      top: 450px;
+
+      @media screen and (min-width: 1500px) {
+        right: 500px;
+      }
 
       @media screen and (max-width: $x-large) {
         display: none;

@@ -13,7 +13,6 @@
   .wrapper {
     display: flex;
     width: 100%;
-    justify-content: center;
   }
 
   header {
@@ -151,6 +150,7 @@
 
       @media screen and (min-width: $desktop) {
         justify-content: flex-start;
+        margin-top: 40px;
       }
 
       .landing-strip-title {
@@ -181,12 +181,12 @@
       left: 975px;
       bottom: 30px;
 
-      @media screen and (min-width: 1160px) and (max-width: 1300px) {
-        left: 1025px;
+      @media screen and (min-width: $x-large) {
+        left: 1160px;
       }
 
-      @media screen and (min-width: $x-large) {
-        left: 1175px;
+      @media screen and (min-width: 1500px) {
+        left: 1250px;
       }
 
       @media screen and (max-width: $x-large) {
@@ -203,5 +203,6 @@
     background-size: cover;
     height: 90vh;
     width: 100%;
+    transition: height 999999999999s;
   }
 }
