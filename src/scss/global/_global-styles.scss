@@ -108,3 +108,36 @@ span {
     width: 20px;
   }
 }
+
+#update-ready {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background: rgba($charcoal, 0.9);
+  width: 100%;
+  height: 40px;
+  z-index: 1;
+  border-top: 1px solid $orange;
+
+  span,
+  button {
+    font-size: 14px;
+    display: table-cell;
+    vertical-align: middle;
+    color: $white;
+
+    @media screen and (max-width: $mobile-tablet) {
+      font-size: 12px;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    color: $orange;
+    font-family: "Raleway Bold", sans-serif;
+    padding: 0;
+    background: none;
+    border: none;
+  }
+}
