@@ -253,13 +253,14 @@
                     </div>
                     <article class="form-wrapper">
                         <small>* required</small>
-                        <form>
+                        <form action="POST" data-netlify="true">
                             <input class="pristine" id="name" type="text" name="name" placeholder="Name *">
                             <input class="pristine" id="email" type="email" name="email" placeholder="Email *">
                             <input class="pristine" id="tel" type="text" name="tel" placeholder="Contact number *">
                             <input class="pristine" id="service" type="text" name="service" placeholder="Service interested in">
                             <textarea class="pristine" name="message" id="message" cols="5" rows="5" placeholder="Your message *"></textarea>
                             <span class="error-message"></span>
+                            <div class="recaptcha" data-netlify-recaptcha="true"></div>
                             <button disabled class="button" id="submit" type="submit">Send</button>
                         </form>
                     </article>
