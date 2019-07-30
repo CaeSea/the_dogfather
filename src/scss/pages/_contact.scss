@@ -49,6 +49,34 @@
       margin: 0 auto;
       margin-top: 2em;
 
+      form {
+        display: flex;
+        flex-wrap: wrap;
+
+        .input-holder {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 1.5em;
+          margin-top: 1.5em;
+          width: 46%;
+
+          @media screen and (max-width: $mobile-tablet) {
+            width: 96%;
+          }
+        }
+
+        #message-holder {
+          width: 96%;
+        }
+
+        label {
+          color: $white;
+          padding-left: 2%;
+          margin-left: 2%;
+          width: 100%;
+        }
+      }
+
       .error-message {
         color: $red;
         font-family: "Raleway";
@@ -79,27 +107,13 @@
             background-color: lighten($charcoal, 5%);
           }
 
-          &::placeholder {
-            font-family: "Raleway Medium", sans-serif;
-            color: $white;
-            opacity: 0.8;
-
-            @media screen and (max-width: $tablet) {
-              font-size: 0.9em;
-            }
-          }
-
-          &:focus::placeholder {
-            opacity: 0;
-          }
-
           &.invalid {
             outline: 2px solid $red;
             border: none;
           }
         }
         input {
-          width: 42%;
+          width: 96%;
           margin: 2%;
           padding: 2%;
 
@@ -112,7 +126,6 @@
           width: 92%;
           margin: 2%;
           padding: 2%;
-          margin-top: 50px;
         }
 
         button {
