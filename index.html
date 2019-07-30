@@ -33,17 +33,52 @@
 
         <script type="text/javascript">
 
+            let newWorker;
+
             if ("serviceWorker" in navigator) {
                 window.addEventListener("load", function() {
                     navigator.serviceWorker.register("./sw.js").then(
                     function(registration) {
-                        // Registration was successful
-                        console.log(
-                        "ServiceWorker registration successful"
-                        );
+                        if (!navigator.serviceWorker.controller) {
+                            return;
+                        }
+
+                        if (registration.waiting) {
+                            $('#update-ready').css('display', 'table');
+                            $('#refresh').on('click', function() {
+                                newWorker.postMessage({ action: 'skipWaiting' });
+                            });
+                            return;
+                        }
+
+                        if (registration.installing) {
+                            registration.installing.addEventListener("statechange", function() {
+                                if (newWorker.state == "installed") {
+                                    $('#update-ready').css('display', 'table');
+                                    $('#refresh').on('click', function() {
+                                        newWorker.postMessage({ action: 'skipWaiting' });
+                                    });
+                                }
+                            });
+                        }
+
+                        registration.addEventListener('updatefound', function() {
+                            newWorker = registration.installing;
+                            registration.installing.addEventListener("statechange", function() {
+                                if (newWorker.state == "installed") {
+                                    $('#update-ready').css('display', 'table');
+                                    $('#refresh').on('click', function() {
+                                        newWorker.postMessage({ action: 'skipWaiting' });
+                                    });
+                                }
+                            });
+                        });
+
+                        navigator.serviceWorker.addEventListener('controllerchange', function() {
+                            window.location.reload();
+                        });
                     },
                     function(err) {
-                        // registration failed :(
                         console.log("ServiceWorker registration failed: ", err);
                     }
                     );
@@ -61,6 +96,7 @@
 
     <body>
         <main>
+            <aside id="update-ready"><span>New version available! <button id="refresh">REFRESH</button> or <button id="dismiss">DISMISS</button></span></aside>
             <section id="landing-section">
                 <div class="wrapper">
                     <header>
