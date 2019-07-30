@@ -254,11 +254,26 @@
                     <article class="form-wrapper">
                         <small>* required</small>
                         <form action="POST" data-netlify="true">
-                            <input class="pristine" id="name" type="text" name="name" placeholder="Name *">
-                            <input class="pristine" id="email" type="email" name="email" placeholder="Email *">
-                            <input class="pristine" id="tel" type="text" name="tel" placeholder="Contact number *">
-                            <input class="pristine" id="service" type="text" name="service" placeholder="Service interested in">
-                            <textarea class="pristine" name="message" id="message" cols="5" rows="5" placeholder="Your message *"></textarea>
+                            <div class="input-holder">
+                                <label for="name">Name *</label>
+                                <input class="pristine" id="name" type="text" name="name">
+                            </div>
+                            <div class="input-holder">
+                                <label for="email">Email *</label>
+                                <input class="pristine" id="email" type="email" name="email">
+                            </div>
+                            <div class="input-holder">
+                                <label for="tel">Phone *</label>
+                                <input class="pristine" id="tel" type="text" name="tel">
+                            </div>
+                            <div class="input-holder">
+                                <label for="service">Service</label>
+                                <input class="pristine" id="service" type="text" name="service">
+                            </div>
+                            <div id="message-holder" class="input-holder">
+                                <label for="message">Message *</label>
+                                <textarea class="pristine" name="message" id="message" cols="5" rows="5"></textarea>
+                            </div>
                             <span class="error-message"></span>
                             <div class="recaptcha" data-netlify-recaptcha="true"></div>
                             <button disabled class="button" id="submit" type="submit">Send</button>
@@ -273,8 +288,8 @@
                     <aside class="socials">
                         <a href="terms.html">Terms &amp; Conditions</a>
                         <a href="terms.html">Privacy Policy</a>
-                        <a href="https://www.facebook.com/The-Dog-Father-446753476117853/" target="_blank"><img id="facebook" src="images/facebook.svg" alt="Facebook"></a>
-                        <a href="https://instagram.com/AdamDogFather" target="_blank"><img id="instagram" src="images/instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/The-Dog-Father-446753476117853/" target="_blank" rel="noopener"><img id="facebook" src="images/facebook.svg" alt="Facebook"></a>
+                        <a href="https://instagram.com/AdamDogFather" target="_blank" rel="noopener"><img id="instagram" src="images/instagram.svg" alt="Instagram"></a>
                     </aside>
                 </footer>
             </section>
