@@ -49,7 +49,9 @@ self.addEventListener("activate", function(event) {
         cacheNames
           .filter(function(cacheName) {
             return (
-              cacheName.startsWith("dogfather-") && cacheName != staticCacheName
+              (cacheName.startsWith("dogfather-") ||
+                cacheName.startsWith("theDogfather")) &&
+              cacheName != staticCacheName
             );
           })
           .map(function(cacheName) {
