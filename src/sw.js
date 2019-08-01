@@ -1,4 +1,4 @@
-const staticCacheName = "dogfather-cache-v1";
+const staticCacheName = "dogfather-cache-v1.1";
 
 self.addEventListener("install", function(e) {
   e.waitUntil(

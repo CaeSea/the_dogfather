@@ -47,7 +47,6 @@
                         }
 
                         registration.addEventListener('updatefound', function() {
-                            console.log(registration);
                             newWorker = registration.installing;
                             registration.installing.addEventListener("statechange", function() {
                                 if (newWorker.state == "installed") {
@@ -63,7 +62,6 @@
                         });
 
                         if (registration.waiting) {
-                            console.log(registration);
                             $('#update-ready').css('display', 'table');
                             $('#refresh').on('click', function() {
                                 registration.waiting.postMessage({ action: 'skipWaiting' });
