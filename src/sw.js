@@ -1,4 +1,4 @@
-const staticCacheName = "dogfather-cache-v3";
+const staticCacheName = "dogfather-cache-v1";
 
 self.addEventListener("install", function(e) {
   e.waitUntil(
@@ -49,9 +49,7 @@ self.addEventListener("activate", function(event) {
         cacheNames
           .filter(function(cacheName) {
             return (
-              (cacheName.startsWith("dogfather-") ||
-                cacheName.startsWith("theDogfather")) &&
-              cacheName != staticCacheName
+              cacheName.startsWith("dogfather-") && cacheName != staticCacheName
             );
           })
           .map(function(cacheName) {

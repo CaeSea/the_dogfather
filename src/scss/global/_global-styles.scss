@@ -114,7 +114,7 @@ span {
   position: fixed;
   bottom: 0;
   text-align: center;
-  background: rgba($charcoal, 0.9);
+  background: rgba($white, 0.9);
   width: 100%;
   height: 40px;
   z-index: 1;
@@ -125,7 +125,7 @@ span {
     font-size: 14px;
     display: table-cell;
     vertical-align: middle;
-    color: $white;
+    color: $font-primary;
 
     @media screen and (max-width: $mobile-tablet) {
       font-size: 12px;
