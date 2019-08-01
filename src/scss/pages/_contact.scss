@@ -77,6 +77,12 @@
         }
       }
 
+      .submit-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+
       .error-message {
         color: $red;
         font-family: "Raleway";
