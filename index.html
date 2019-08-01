@@ -35,34 +35,19 @@
 
             let newWorker;
 
+            
+
             if ("serviceWorker" in navigator) {
                 window.addEventListener("load", function() {
                     navigator.serviceWorker.register("./sw.js").then(
                     function(registration) {
+                        
                         if (!navigator.serviceWorker.controller) {
                             return;
                         }
 
-                        if (registration.waiting) {
-                            $('#update-ready').css('display', 'table');
-                            $('#refresh').on('click', function() {
-                                newWorker.postMessage({ action: 'skipWaiting' });
-                            });
-                            return;
-                        }
-
-                        if (registration.installing) {
-                            registration.installing.addEventListener("statechange", function() {
-                                if (newWorker.state == "installed") {
-                                    $('#update-ready').css('display', 'table');
-                                    $('#refresh').on('click', function() {
-                                        newWorker.postMessage({ action: 'skipWaiting' });
-                                    });
-                                }
-                            });
-                        }
-
                         registration.addEventListener('updatefound', function() {
+                            console.log(registration);
                             newWorker = registration.installing;
                             registration.installing.addEventListener("statechange", function() {
                                 if (newWorker.state == "installed") {
@@ -70,9 +55,42 @@
                                     $('#refresh').on('click', function() {
                                         newWorker.postMessage({ action: 'skipWaiting' });
                                     });
+                                    $('#dismiss').on('click', function() {
+                                        $('#update-ready').css('display', 'none');
+                                    });
                                 }
                             });
                         });
+
+                        if (registration.waiting) {
+                            console.log(registration);
+                            $('#update-ready').css('display', 'table');
+                            $('#refresh').on('click', function() {
+                                registration.waiting.postMessage({ action: 'skipWaiting' });
+                                window.location.reload();
+                            });
+                            $('#dismiss').on('click', function() {
+                                $('#update-ready').css('display', 'none');
+                            });
+                            return;
+                        }
+
+                        if (registration.installing) {
+                            registration.installing.addEventListener("statechange", function() {
+                                newWorker = registration.installing;
+                                if (newWorker.state == "installed") {
+                                    $('#update-ready').css('display', 'table');
+                                    $('#refresh').on('click', function() {
+                                        newWorker.postMessage({ action: 'skipWaiting' });
+                                    });
+                                    $('#dismiss').on('click', function() {
+                                        $('#update-ready').css('display', 'none');
+                                    });
+                                }
+                            });
+                        }
+
+                        
 
                         navigator.serviceWorker.addEventListener('controllerchange', function() {
                             window.location.reload();
